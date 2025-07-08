@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Our Love Journey</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="min-h-screen pt-12 pb-20 px-4">
+    <!-- Header Section -->
+    <header class="text-center mb-16">
+      <h1 class="romantic-font text-4xl sm:text-5xl md:text-6xl font-bold text-rose-600 mb-4 px-4">Our 4 Year Journey</h1>
+      <p class="text-lg text-rose-500 italic">Celebrating four years of beautiful moments together</p>
+    </header>
+
+    <!-- Photos Gallery Section -->
+    <section id="photos" class="mb-20">
+      <h2 class="romantic-font text-3xl text-center mb-10 text-rose-700">Precious Memories</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 max-w-6xl mx-auto px-4">
+        <div class="love-card p-4 text-center">
+          <div class="photo-frame mb-4">
+            <img src="photo1.jpg" alt="3 yrs ago " class="w-full h-auto rounded-lg" />
+          </div>
+          <p class="italic text-gray-700">"3 yrs ago "</p>
+          <p class="mt-2 text-sm text-gray-500">July 9, 2023</p>
+        </div>
+
+        <div class="love-card p-4 text-center">
+          <div class="photo-frame mb-4">
+            <img src="photo3.jpg" alt="Mall memories" class="w-full h-auto rounded-lg" />
+          </div>
+          <p class="italic text-gray-700">"Diwali Together"</p>
+          <p class="mt-2 text-sm text-gray-500">November 3, 2024</p>
+        </div>
+
+        <div class="love-card p-4 text-center">
+          <div class="photo-frame mb-4">
+            <img src="photo2.jpg" alt="Diwali Together " class="w-full h-auto rounded-lg" />
+          </div>
+          <p class="italic text-gray-700">"Iskon memories"</p>
+          <p class="mt-2 text-sm text-gray-500">July 6, 2025</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Thoughts/Notes Section -->
+    <section class="mb-20 max-w-3xl mx-auto px-4">
+      <h2 class="romantic-font text-3xl text-center mb-10 text-rose-700">Thoughts & Memories</h2>
+
+      <div class="space-y-6">
+        <div class="love-card p-6 relative">
+          <div class="heart-beat absolute -left-3 -top-3 text-rose-500 text-2xl">❤️</div>
+          <div class="group">
+            <p class="italic text-lg" id="randomThought"> click the ❤️ below to see random memories...</p>
+          </div>
+        </div>
+
+        <div class="love-card p-6">
+          <h3 class="romantic-font text-xl text-rose-600 mb-3">My Secret Message</h3>
+          <div class="p-4 rounded-lg border border-rose-200">
+            <p class="italic text-gray-700">"Click to read my special words for you"</p>
+            <button onclick="revealSecretMessage()" class="mt-2 bg-rose-500 hover:bg-rose-600 text-white px-4 py-2 rounded-md transition">Show Message</button>
+            <div id="secretMessage" class="hidden mt-4 text-sm text-gray-600"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Surprise Section with Confetti -->
+    <section class="mb-20 px-4">
+      <h2 class="romantic-font text-3xl text-center mb-10 text-rose-700">A Special Surprise</h2>
+
+      <div class="max-w-md mx-auto">
+        <div class="envelope love-card p-8 text-center cursor-pointer relative overflow-hidden transition-all duration-300" onclick="revealSurprise()">
+          <div class="heart-beat text-5xl text-white mb-4">✉</div>
+          <h3 class="text-white text-xl font-bold mb-2">Open Me!</h3>
+          <p class="text-white">Click to reveal something special</p>
+
+          <!-- Hidden Surprise Content -->
+          <div id="surpriseContent" class="hidden-section mt-6 bg-white p-6 rounded-lg">
+            <h3 class="romantic-font text-2xl text-rose-600 mb-4">Our First meet</h3>
+            <img src="photo4.jpg" alt="Our first meet" class="w-full h-auto rounded-lg mb-4" />
+            <p class="mb-4">“The day our eyes met for the first time, my world changed forever.
+              From a simple hello to endless conversations.
+              That moment started our beautiful journey together.”</p>
+            <p class="text-sm text-gray-500">PS: Thobad bgitla ahe ka yevda lihlal me...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline">
+      <h2 class="romantic-font text-3xl text-center mb-10 text-rose-700">Our Journey Timeline</h2>
+
+      <div class="max-w-3xl mx-auto relative">
+        <div class="hidden sm:block absolute left-4 md:left-1/2 bg-rose-300 w-1 h-full -ml-px"></div>
+
+        <div class="space-y-12 relative z-10">
+          <!-- Item 1 -->
+          <div class="flex flex-col items-start group" id="timelineItem1">
+            <div class="md:w-1/2 md:px-6">
+              <div class="love-card p-6">
+                <div class="flex items-center mb-2">
+                  <div class="w-8 h-8 rounded-full bg-rose-500 flex items-center justify-center text-white mr-3 flex-shrink-0">1</div>
+                  <h3 class="text-lg font-bold">Dadar</h3>
+                </div>
+                <p class="text-gray-700">Our Temple Trip...</p>
+                <button onclick="showHiddenContent('timelineItem1')" class="mt-2 text-sm text-rose-500 hover:underline flex items-center gap-1">Read more <span>→</span></button>
+                <div class="hidden-content mt-2 text-sm text-gray-600 hidden">
+                  The way you looked at me and held my hand. That was when I knew this was something special.
+                </div>
+              </div>
+            </div>
+            <div class="w-full px-2 sm:px-6 text-center mt-4">
+              <img src="photo5.jpg" alt="30 months" class="inline-block rounded-lg w-full max-w-xs" />
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="flex flex-col md:flex-row items-start md:even:flex-row-reverse group" id="timelineItem2">
+            <div class="md:w-1/2 md:px-6">
+              <div class="love-card p-6">
+                <div class="flex items-center mb-2">
+                  <div class="w-8 h-8 rounded-full bg-rose-500 flex items-center justify-center text-white mr-3 flex-shrink-0">2</div>
+                  <h3 class="text-lg font-bold">Bday 2024</h3>
+                </div>
+                <p class="text-gray-700">Batata bday...</p>
+                <button onclick="showHiddenContent('timelineItem2')" class="mt-2 text-sm text-rose-500 hover:underline flex items-center gap-1">Read more <span>→</span></button>
+                <div class="hidden-content mt-2 text-sm text-gray-600 hidden">
+                  I'll never forget how excited we both were for my birthday and how special you made it.
+                </div>
+              </div>
+            </div>
+            <div class="md:w-1/2 md:px-6 text-center mt-2 md:mt-0">
+              <img src="photo6.jpg" alt="Batata bday" class="inline-block rounded-lg w-full max-w-xs" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Floating Buttons -->
+  <div class="fixed bottom-4 right-4 z-50 flex flex-col gap-3 sm:gap-2" title="Navigate through our love journey">
+    <button onclick="showRandomThought()" class="bg-rose-500 hover:bg-rose-600 text-white p-3 rounded-full shadow-lg transition transform hover:scale-110">❤️</button>
+    <button onclick="scrollToSection('timeline')" class="bg-rose-500 hover:bg-rose-600 text-white p-3 rounded-full shadow-lg transition transform hover:scale-110">📅</button>
+    <button onclick="scrollToSection('photos')" class="bg-rose-500 hover:bg-rose-600 text-white p-3 rounded-full shadow-lg transition transform hover:scale-110">📷</button>
+    <button onclick="toggleMusic()" id="musicBtn" class="bg-rose-500 hover:bg-rose-600 text-white p-3 rounded-full shadow-lg transition transform hover:scale-110">🔇</button>
+  </div>
+
+  <!-- Background Music -->
+  <audio id="bgMusic" loop>
+    <source src="background.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- 🎉 Confetti Script -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+  <script src="script.js"></script>
+  <script>
+    let musicPlayed = false;
+
+    function toggleMusic() {
+      const audio = document.getElementById("bgMusic");
+      const btn = document.getElementById("musicBtn");
+      if (audio.paused) {
+        audio.play();
+        btn.textContent = "🔊";
+      } else {
+        audio.pause();
+        btn.textContent = "🔇";
+      }
+    }
+
+    document.body.addEventListener("click", () => {
+      if (!musicPlayed) {
+        document.getElementById("bgMusic").play().catch(() => {});
+        document.getElementById("musicBtn").textContent = "🔊";
+        musicPlayed = true;
+      }
+    }, { once: true });
+
+    function revealSurprise() {
+      const surprise = document.getElementById('surpriseContent');
+      surprise.classList.toggle('revealed');
+      const envelope = document.querySelector('.envelope');
+
+      if (surprise.classList.contains('revealed')) {
+        envelope.style.transform = "translateY(-10px) rotate(-2deg)";
+        envelope.style.backgroundImage = "linear-gradient(135deg, #f9d1d1 0%, #f4a7bb 70%)";
+
+        if (typeof confetti === "function") {
+          confetti({
+            particleCount: 200,
+            spread: 70,
+            origin: { y: 0.6 }
+          });
+        }
+      } else {
+        envelope.style.transform = "translateY(0) rotate(0)";
+        envelope.style.backgroundImage = "linear-gradient(135deg, #f9c6d1 0%, #f4a7bb 100%)";
+      }
+    }
+  </script>
+</body>
+</html>
